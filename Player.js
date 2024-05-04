@@ -4,10 +4,12 @@ class Player {
     this.health = health;
     this.strength = strength;
     this.attack = attack;
+    this.currentDieRoll = 0;
   }
 
   rollDie() {
-    return Math.floor(Math.random() * 6) + 1;
+    this.currentDieRoll = Math.floor(Math.random() * 6) + 1;
+    return this.currentDieRoll;
   }
 
   attackDamage() {
@@ -27,3 +29,5 @@ class Player {
     return this.health > 0;
   }
 }
+
+module.exports = Player;
